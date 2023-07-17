@@ -1,0 +1,160 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body,
+main {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  font-family: "Red Hat Display", sans-serif;
+  background-image: url("./images/pattern-background-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--clr-primary-100);
+  color: var(--clr-neutral-200);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h2 {
+  color: var(--clr-neutral-300);
+}
+
+:root {
+  --ratio: 1.5;
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+
+  --clr-primary-100: hsl(225, 100%, 94%);
+  --clr-primary-200: hsla(245, 83%, 68%, 1);
+  --clr-primary-300: hsl(245, 75%, 52%);
+  --clr-neutral-100: hsl(225, 100%, 98%);
+  --clr-neutral-200: hsl(224, 23%, 55%);
+  --clr-neutral-300: hsl(223, 47%, 23%);
+  --fw-900: 900;
+  --fw-700: 700;
+}
+
+.card {
+  max-width: 90%;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack > * + * {
+  margin-block-start: 1.5rem;
+}
+
+.box {
+  text-align: center;
+  background-color: white;
+  padding: var(--s1);
+}
+
+.card-image {
+  width: 100%;
+  border-radius: 1.25rem 1.25rem 0 0;
+}
+
+.card-body {
+  margin-block-start: 0;
+  border-radius: 0 0 1.25rem 1.25rem;
+}
+
+.plan {
+  display: flex;
+  width: 100%;
+  gap: var(--s0);
+  padding: var(--s0);
+  border-radius: 0.6rem;
+  background-color: var(--clr-neutral-100);
+}
+
+button {
+  display: block;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: var(--fw-700);
+}
+
+.btn-primary {
+  color: white;
+  background-color: var(--clr-primary-300);
+  padding: var(--s0);
+  width: 100%;
+  border-radius: 0.6rem;
+}
+
+.btn-primary:hover {
+  background-color: var(--clr-primary-200);
+}
+
+.btn-cancel {
+  color: var(--clr-neutral-200);
+}
+
+.btn-cancel:hover {
+  color: var(--clr-neutral-300);
+}
+
+.link {
+  text-decoration: underline;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: var(--clr-primary-200);
+}
+
+/* utility */
+
+.text-neutral-300 {
+  color: var(--clr-neutral-300);
+}
+
+.text-primary-300 {
+  color: var(--clr-primary-300);
+}
+
+.fw-bold {
+  font-weight: var(--fw-700);
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.push-right {
+  margin-left: auto;
+}
+
+@media (min-width: 35rem) {
+  body {
+    background-image: url("./images/pattern-background-desktop.svg");
+  }
+  .card {
+    max-width: 40%;
+  }
+}
